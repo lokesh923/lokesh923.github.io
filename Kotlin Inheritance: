@@ -1,0 +1,56 @@
+Kotlin Inheritance: -
+Inheritance is one of the key features of object-oriented programming. It allows user to create a new class (derived class) from an existing class (base class).
+The derived class inherits all the features from the base class and can have additional features of its own.
+
+Why Inheritance:-
+
+Suppose, in your application, you want three characters - a math teacher, a footballer and a businessman.
+Since, all of the characters are persons, they can walk and talk. However, they also have some special skills. A math teacher can teach math, a footballer can play football and a businessman can run a business.
+You can individually create three classes who can walk, talk and perform their special skill.
+
+Using inheritance, now you don't implement the same code for walk(), talk() and eat() for each class. You just need to inherit them.
+So, for Math Teacher (derived class), you inherit all features of a Person (base class) and add a new feature teach Math(). Likewise, for the Footballer class, you inherit all the features of the Person class and add a new feature play Football() and so on.
+This makes your code cleaner, understandable and extendable.
+
+
+Kotlin Inheritance:-
+open class Person(age: Int, name: String) {
+    init {
+        println("My name is $name.")
+        println("My age is $age")
+    }
+}
+
+class MathTeacher(age: Int, name: String): Person(age, name) {
+
+    fun teachMaths() {
+        println("I teach in primary school.")
+    }
+}
+
+class Footballer(age: Int, name: String): Person(age, name) {
+    fun playFootball() {
+        println("I play for LA Galaxy.")
+    }
+}
+
+fun main(args: Array<String>) {
+    val t1 = MathTeacher(25, "Jack")
+    t1.teachMaths()
+
+    println()
+
+    val f1 = Footballer(29, "Christiano")
+    f1.playFootball()
+}
+
+
+Output:-
+My name is Jack.
+My age is 25
+I teach in primary school.
+
+My name is Cristiano.
+My age is 29
+I play for LA Galaxy.
+
