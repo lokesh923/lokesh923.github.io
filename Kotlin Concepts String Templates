@@ -1,0 +1,47 @@
+In this File I am describing few concepts of Kotlin String and its String Templates.
+
+String Basic Concepts: -
+Strings are a sequence of characters. For example, “lokesh bagora”
+ is a string literal.
+In Kotlin, all strings are objects of String class. Meaning, string literals such as “lokesh bagora” are implemented as instances of this class.
+
+
+How to create a string Variable: -
+
+Val mystring=”lokesh bagora”
+
+
+How to access characters of a String:-
+Val mystring=”lokesh bagora”
+Val item= mystring[2]
+
+Iterate through a string:-
+fun main(args: Array<String>) {
+    val myString = "Hey!"
+
+    for (item in myString) {
+        println(item)
+    }
+}
+Kotlin String Templates
+Kotlin has an awesome feature called string templates that allows strings to contain template expressions.
+A string template expression starts with a dollar sign $. Here are few examples:
+
+
+fun main(args: Array<String>) {
+
+    val myInt = 5;
+    val myString = "myInt = $myInt"
+
+    println(myString)
+}
+
+When you run the program, the output will be:
+Output :- 5
+
+It is because the expression $myInt (expression starting with $ sign) inside the string is evaluated and concatenated into the string.
+
+
+
+
+
