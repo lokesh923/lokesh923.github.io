@@ -1,0 +1,64 @@
+Lambda Expressions
+Lambda expression or simply lambda is an anonymous function; a function without name. These functions are passed immediately as an expression without declaration.
+fun main(args: Array<String>) {
+
+    val greeting = { println("Hello!")}
+
+    // invoking function
+    greeting()
+}
+
+When you run the program, the output will be:
+Hello!
+
+
+Example: Lambda With Parameters and Return Type
+The program below has a lambda expression that accepts two integers as parameters, and returns the product of those two integers.
+fun main(args: Array<String>) {
+    val product = { a: Int, b: Int -> a * b }
+    val result = product(9, 3)
+    println(result)
+}
+When you run the program, the output will be:
+27
+Here, the lambda expression is:
+ 
+Example: Passing Lambda to Function
+Let's pass a lambda expression to a higher-order function. Here's how you can do it.
+fun callMe(greeting: () -> Unit) {
+    greeting()
+}
+
+fun main(args: Array<String>) {
+    callMe({ println("Hello!") })
+}
+When you run the program, the output will be:
+Hello!
+
+Example: maxBy() Function
+The maxBy() function returns the first element yielding the largest value of the given function or null if there are no elements.
+data class Person(val name: String, val age: Int)
+
+fun main(args: Array<String>) {
+
+    val people = listOf(
+            Person("Jack", 34),
+            Person("Shelly", 19),
+            Person("Patrick", 13),
+            Person("Jill", 12),
+            Person("Shane", 22),
+            Person("Joe", 18)
+            )
+
+    val selectedPerson = people.maxBy({ person ->  person.age })
+
+    println(selectedPerson)
+    println("name: ${selectedPerson?.name}" )
+    println("age: ${selectedPerson?.age}" )
+}
+When you run the program, the output will be:
+Person(name=Jack, age=34)
+name: Jack
+age: 34
+
+
